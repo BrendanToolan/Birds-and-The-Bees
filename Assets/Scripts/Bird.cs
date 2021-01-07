@@ -8,7 +8,7 @@ public class Bird : MonoBehaviour
     Rigidbody2D birdRB;
     BoxCollider2D birdCollider;
 
-    public float speed = 3f;
+    public float speed = 2f;
     private float range = 6f;
     private float energy = 200f;
     private float energyRate = 0.3f;
@@ -33,9 +33,14 @@ public class Bird : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Border")
+        if(collision.tag == "XBorder")
         {
-            movementDirection *= -1f;
+            movementDirection.x *= -1f;
+        }
+
+        if(collision.tag == "YBorder")
+        {
+            movementDirection.y *= -1f;
         }
     }
 }
