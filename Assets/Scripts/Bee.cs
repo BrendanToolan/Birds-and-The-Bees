@@ -9,6 +9,8 @@ public class Bee : MonoBehaviour
     BoxCollider2D beeCollider;
 
     public float beeSpeed = 3f;
+    private float range = 6f;
+    private float energy = 200f;
     private float energyRate = 0.3f;
     private Vector2 movementDirection;
 
@@ -17,12 +19,28 @@ public class Bee : MonoBehaviour
     void Start()
     {
         beeRB = GetComponent<Rigidbody2D>();
+        beeRB.velocity = new Vector2(0,0);
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag =="Bird")
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        beeRB.velocity = new Vector2(beeSpeed, 0f);   
+      // beeRB.velocity = new Vector2(beeSpeed, 0f);   
     }
+
+    void Searching()
+    {
+        energyRate -= 0.1f;
+    }
+
+
 }

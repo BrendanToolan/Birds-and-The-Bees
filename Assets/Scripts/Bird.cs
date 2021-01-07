@@ -9,6 +9,8 @@ public class Bird : MonoBehaviour
     BoxCollider2D birdCollider;
 
     public float speed = 4f;
+    private float range = 6f;
+    private float energy = 200f;
     private float energyRate = 0.3f;
 
 
@@ -16,6 +18,7 @@ public class Bird : MonoBehaviour
     void Start()
     {
         birdRB = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
