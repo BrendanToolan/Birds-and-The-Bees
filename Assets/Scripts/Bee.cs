@@ -35,6 +35,12 @@ public class Bee : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+        if(collision.tag =="Border")
+        {
+            movementDirection *= -1f;
+        }
+
         if(collision.tag =="Bird")
         {
             Destroy(gameObject);
@@ -50,6 +56,7 @@ public class Bee : MonoBehaviour
     void Searching()
     {
         energyRate -= 0.1f;
+        beeRB.velocity = movementDirection * beeSpeed;
     }
 
 

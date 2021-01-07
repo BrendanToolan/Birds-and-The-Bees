@@ -8,6 +8,7 @@ TagManager:
   - Flower
   - Bird
   - Bee
+  - Border
   layers:
   - Default
   - TransparentFX
