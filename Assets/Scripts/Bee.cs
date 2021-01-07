@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+References
+
+https://forum.unity.com/threads/creating-a-random-direction-vector.220427/
+
+
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +20,7 @@ public class Bee : MonoBehaviour
     private float range = 6f;
     private float energy = 200f;
     private float energyRate = 0.3f;
+    public float nectar = 0f;
     private Vector2 movementDirection;
 
 
@@ -20,6 +29,7 @@ public class Bee : MonoBehaviour
     {
         beeRB = GetComponent<Rigidbody2D>();
         beeRB.velocity = new Vector2(0,0);
+        movementDirection = Random.insideUnitCircle.normalized;
         
     }
 
@@ -34,7 +44,7 @@ public class Bee : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      // beeRB.velocity = new Vector2(beeSpeed, 0f);   
+      beeRB.velocity = movementDirection * beeSpeed;   
     }
 
     void Searching()
