@@ -27,8 +27,12 @@ public class Bird : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Flying();    
+    }
+
+    private void Flying()
+    {
         birdRB.velocity = movementDirection*speed;
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

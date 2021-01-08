@@ -20,9 +20,9 @@ TagManager:
   - 
   - 
   - Hive
-  - 
-  - 
-  - 
+  - Bee
+  - Bird
+  - Flower
   - 
   - 
   - 
@@ -44,6 +44,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2286418259
+    locked: 0
+  - name: Nest
+    uniqueID: 524341431
+    locked: 0
+  - name: Hive
+    uniqueID: 3695271381
+    locked: 0
+  - name: Flowers
+    uniqueID: 1042489125
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

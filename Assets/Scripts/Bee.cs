@@ -18,7 +18,7 @@ public class Bee : MonoBehaviour
     SpriteRenderer beeSprite;
 
     public float beeSpeed = 2f;
-    private float range = 3f;
+    private float range = 1f;
     private float energy = 200f;
     private float energyRate = 0.3f;
     public float nectar = 0f;
@@ -86,13 +86,12 @@ public class Bee : MonoBehaviour
     private void Searching()
     {
 
-
         energyRate -= 0.1f;
         beeRB.velocity = movementDirection * beeSpeed;
 
         if(Vector2.Distance(transform.position, flower.transform.position) <= range)
         {
-            transform.position = Vector2.MoveTowards(transform.position, flower.transform.position, beeSpeed);
+            transform.position = Vector2.MoveTowards(transform.position, flower.transform.position, beeSpeed*Time.deltaTime);
             print("bee within range");
         }
 
