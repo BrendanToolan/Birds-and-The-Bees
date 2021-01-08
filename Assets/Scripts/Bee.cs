@@ -3,6 +3,8 @@ References
 
 https://forum.unity.com/threads/creating-a-random-direction-vector.220427/
 https://stuartspixelgames.com/2019/02/19/how-to-change-sprites-colour-or-transparency-unity-c/
+https://stackoverflow.com/questions/59022682/using-unity-scripting-enemy-ai-follow-player
+
 
 */
 
@@ -18,7 +20,7 @@ public class Bee : MonoBehaviour
     SpriteRenderer beeSprite;
 
     public float beeSpeed = 2f;
-    private float range = 1f;
+    private float range = 2f;
     private float energy = 200f;
     private float energyRate = 0.3f;
     public float nectar = 0f;
@@ -33,7 +35,13 @@ public class Bee : MonoBehaviour
         beeRB = GetComponent<Rigidbody2D>();
         beeRB.velocity = new Vector2(0,0);
         movementDirection = Random.insideUnitCircle.normalized;
-        beeSprite = GetComponent<SpriteRenderer>();
+       // beeSprite = GetComponent<SpriteRenderer>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -61,46 +69,7 @@ public class Bee : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-      Searching();
-      Energy();  
-    }
-
-    private void Energy()
-    {
-        if(energy <= 120)
-        {
-            beeSprite.color = new Color(255, 255, 0, 1);
-        }
-        else if(energy <= 60)
-        {
-            beeSprite.color = new Color(1, 0, 0, 1);
-        }
-       
-
-    }
-
-
-    private void Searching()
-    {
-
-        energyRate -= 0.1f;
-        beeRB.velocity = movementDirection * beeSpeed;
-
-        if(Vector2.Distance(transform.position, flower.transform.position) <= range)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, flower.transform.position, beeSpeed*Time.deltaTime);
-            print("bee within range");
-        }
-
-    }
-
-    private void GoBackToHive()
-    {
-
-    }
+    
 
 
 }
