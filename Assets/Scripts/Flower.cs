@@ -6,10 +6,10 @@ public class Flower : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Bee")
+       /* if(collision.tag == "Bee")
         {
             Destroy(gameObject);
-        }
+        }*/
         
     }
 }

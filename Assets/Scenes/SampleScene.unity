@@ -131,17 +131,17 @@ PrefabInstance:
     - target: {fileID: 8368980157111321118, guid: a7909d24f3efd6946a866c5cdd5f5682,
         type: 3}
       propertyPath: m_Name
-      value: flower (2)
+      value: flower
       objectReference: {fileID: 0}
     - target: {fileID: 8783440986216565599, guid: a7909d24f3efd6946a866c5cdd5f5682,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.58
+      value: -4.44
       objectReference: {fileID: 0}
     - target: {fileID: 8783440986216565599, guid: a7909d24f3efd6946a866c5cdd5f5682,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.78
+      value: -2.09
       objectReference: {fileID: 0}
     - target: {fileID: 8783440986216565599, guid: a7909d24f3efd6946a866c5cdd5f5682,
         type: 3}
@@ -208,8 +208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1da0292e9972a2544a4987ebc968e55f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bee: {fileID: 2649497575591954352, guid: 02daa334048d88a459fb391544a3becd, type: 3}
-  speed: 4
+  currState: 0
+  birdSpeed: 2
 --- !u!1001 &462406713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -220,7 +220,7 @@ PrefabInstance:
     - target: {fileID: 8368980157111321118, guid: a7909d24f3efd6946a866c5cdd5f5682,
         type: 3}
       propertyPath: m_Name
-      value: flower (3)
+      value: flower
       objectReference: {fileID: 0}
     - target: {fileID: 8783440986216565599, guid: a7909d24f3efd6946a866c5cdd5f5682,
         type: 3}
@@ -432,7 +432,7 @@ PrefabInstance:
     - target: {fileID: 8738743567166592795, guid: 02daa334048d88a459fb391544a3becd,
         type: 3}
       propertyPath: m_Name
-      value: Bee (3)
+      value: Bee
       objectReference: {fileID: 0}
     - target: {fileID: 8738743567166592795, guid: 02daa334048d88a459fb391544a3becd,
         type: 3}
@@ -451,7 +451,7 @@ PrefabInstance:
     - target: {fileID: 8368980157111321118, guid: a7909d24f3efd6946a866c5cdd5f5682,
         type: 3}
       propertyPath: m_Name
-      value: flower (4)
+      value: flower
       objectReference: {fileID: 0}
     - target: {fileID: 8783440986216565599, guid: a7909d24f3efd6946a866c5cdd5f5682,
         type: 3}
@@ -634,7 +634,7 @@ PrefabInstance:
     - target: {fileID: 8368980157111321118, guid: a7909d24f3efd6946a866c5cdd5f5682,
         type: 3}
       propertyPath: m_Name
-      value: flower (1)
+      value: flower
       objectReference: {fileID: 0}
     - target: {fileID: 8783440986216565599, guid: a7909d24f3efd6946a866c5cdd5f5682,
         type: 3}
@@ -763,7 +763,7 @@ PrefabInstance:
     - target: {fileID: 8738743567166592795, guid: 02daa334048d88a459fb391544a3becd,
         type: 3}
       propertyPath: m_Name
-      value: Bee (1)
+      value: Bee
       objectReference: {fileID: 0}
     - target: {fileID: 8738743567166592795, guid: 02daa334048d88a459fb391544a3becd,
         type: 3}
@@ -842,7 +842,7 @@ PrefabInstance:
     - target: {fileID: 8738743567166592795, guid: 02daa334048d88a459fb391544a3becd,
         type: 3}
       propertyPath: m_Name
-      value: Bee (2)
+      value: Bee
       objectReference: {fileID: 0}
     - target: {fileID: 8738743567166592795, guid: 02daa334048d88a459fb391544a3becd,
         type: 3}
@@ -1218,7 +1218,7 @@ PrefabInstance:
     - target: {fileID: 3827295504974546424, guid: c8b066f5250ceb6438d32677702fdf8e,
         type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 3827295504974546424, guid: c8b066f5250ceb6438d32677702fdf8e,
         type: 3}
@@ -1247,12 +1247,12 @@ PrefabInstance:
     - target: {fileID: 8783440986216565599, guid: a7909d24f3efd6946a866c5cdd5f5682,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.88
+      value: 3.92
       objectReference: {fileID: 0}
     - target: {fileID: 8783440986216565599, guid: a7909d24f3efd6946a866c5cdd5f5682,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.25
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 8783440986216565599, guid: a7909d24f3efd6946a866c5cdd5f5682,
         type: 3}
@@ -1308,6 +1308,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5093936413799492452, guid: 02daa334048d88a459fb391544a3becd,
+        type: 3}
+      propertyPath: flower.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -5093936413799492452, guid: 02daa334048d88a459fb391544a3becd,
+        type: 3}
+      propertyPath: flower.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2649497575591954352, guid: 02daa334048d88a459fb391544a3becd,
         type: 3}
       propertyPath: m_LocalPosition.x

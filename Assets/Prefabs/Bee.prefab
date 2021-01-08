@@ -143,6 +143,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edde9c2b503d27a49928179da153c33a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currState: 0
   beeSpeed: 2
   nectar: 0
-  flower: {fileID: 8368980157111321118, guid: a7909d24f3efd6946a866c5cdd5f5682, type: 3}
+  flower:
+  - {fileID: 8368980157111321118, guid: a7909d24f3efd6946a866c5cdd5f5682, type: 3}
+  - {fileID: 8368980157111321118, guid: a7909d24f3efd6946a866c5cdd5f5682, type: 3}
+  - {fileID: 8368980157111321118, guid: a7909d24f3efd6946a866c5cdd5f5682, type: 3}
+  - {fileID: 8368980157111321118, guid: a7909d24f3efd6946a866c5cdd5f5682, type: 3}
+  - {fileID: 8368980157111321118, guid: a7909d24f3efd6946a866c5cdd5f5682, type: 3}

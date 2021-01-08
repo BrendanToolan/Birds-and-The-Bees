@@ -6,6 +6,8 @@ public enum BirdState
 {
     Flying,
     Chasing,
+    Eating,
+    Resting
 }
 
 
@@ -18,16 +20,19 @@ public class Bird : MonoBehaviour
     Rigidbody2D birdRb;
     Collider2D birdCollider;
 
+    private float energy = 300f;
+    private float energyRate = 0.2f;
+
     public float birdSpeed = 2f;
-    public float range =  3f;
+    private float range =  4f;
     private  Vector2 movementDirection;
 
     void Start()
     {
         birdRb = GetComponent<Rigidbody2D>();
         birdRb.velocity = new Vector2(0,0);
-        bee =  GameObject.FindGameObjectWithTag("Bee");
-        target = GameObject.FindGameObjectWithTag("Bee") .GetComponent<Transform>();
+        bee =  GameObject.FindGameObjectsWithTag("Bee")[0];
+        target = GameObject.FindGameObjectsWithTag("Bee")[0].GetComponent<Transform>();
         movementDirection = Random.insideUnitCircle.normalized;
 
     }
@@ -58,17 +63,24 @@ public class Bird : MonoBehaviour
 
     private bool isBeeInRange(float range)
     {
-        return Vector2.Distance(transform.position, bee.transform.position) <= range;
+        if(bee != null){
+            return Vector2.Distance(transform.position, bee.transform.position) <= range;
+        }
+
+        return false;
+        
 
     }
 
     void Flying()
     {
+        energyRate -= 0.4f;
         birdRb.velocity = movementDirection*birdSpeed;
     }
 
     void Chasing()
     {
+        energyRate -= 0.8f;
         print("Chasing State");
 
         if(transform.position.x > target.position.x)
